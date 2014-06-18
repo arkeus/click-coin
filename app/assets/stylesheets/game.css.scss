@@ -33,6 +33,58 @@ html {
 						float: right;
 						color: $green-b2;
 					}
+					
+					.tier {
+						line-height: 28px;
+					}
+				}
+				
+				#cpu {
+					
+				}
+				
+				#gpu {
+					
+				}
+				
+				#ram {
+					
+				}
+				
+				#ram-allocation {
+					#unallocated-ram {
+						text-align: center;
+						color: $green-y1;
+					}
+					
+					.allocation {
+						.title {
+							float: left;
+							height: 10px;
+						}
+						
+						.allocated {
+							float: right;
+							color: $green-b2;
+							height: 10px;
+						}
+						
+						.percent {
+							color: $green-dark;
+						}
+					}
+				}
+				
+				#hardware-upgrades {
+					padding: 6px 0;
+					
+					#upgrade-cpu {
+						float: left;
+					}
+					
+					#upgrade-gpu {
+						float: right;
+					}
 				}
 			}
 			
@@ -58,13 +110,29 @@ html {
 			}
 		}
 		
+		.separator {
+			margin: 6px 0;
+			height: 1px;
+			background-color: $green-y2;
+		}
+		
 		.locked {
 			padding: 10px;
 			text-align: center;
 		}
 			
-		#row-1 .cell > div { height: 150px; }
-		#row-2 .cell > div { height: 200px; }
+		#row-1 .cell > div { min-height: 150px; }
+		#row-2 .cell > div { min-height: 10px; }
+		#row-3 .cell > div { min-height: 200px; }
+	}
+	
+	.cc-icon {
+		position: relative;
+		top: 1px;
+	}
+	
+	.button .cc-icon {
+		padding: 0 2px 0 5px;
 	}
 }
 

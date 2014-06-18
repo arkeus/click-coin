@@ -1,27 +1,55 @@
-<div id="click-coin" ng-cloak ng-app>
+<div id="click-coin" ng-cloak ng-app="click-coin">
 	<div id="row-1" class="grid">
 		<div id="hardware" class="cell col-4"><div>
 			<div id="cpu" class="component">
-				<span class="amount">+0.1 cc/s</span>
-				<strong>CPU</strong> Unicorny Mach I
+				<div><strong>CPU</strong> Outel Mach I <span class="amount">+0.1 cc/s</span></div>
 			</div>
-			<div id="cpu" class="component">
+			<div id="gpu" class="component">
 				<span class="amount">x1.0 cc/s</span>
-				<strong>GPU</strong> iVidia Integrated z100
+				<strong>GPU</strong> nAudia Integrated z100
 			</div>
-			<div id="cpu" class="component">
-				<span class="amount">4MB</span>
-				<strong>RAM</strong> Techlong XM
+			<div class="cf" id="hardware-upgrades">
+				<div id="upgrade-cpu" class="button upgrade">Upgrade CPU</div>
+				<div id="upgrade-gpu" class="button upgrade">Upgrade GPU</div>
+			</div>
+			<div class="separator"></div>
+			<div id="ram" class="component">
+				<div class="cf">
+					<span class="amount">4MB</span>
+					<strong>RAM</strong> Queenston XM
+				</div>
+			</div>
+			<div class="separator"></div>
+			<div id="ram-allocation">
+				<div id="unallocated-ram">
+					0MB Unallocated RAM
+				</div>
+				<div class="allocation">
+					<div class="cf short"><span class="title">Miner</span><span class="allocated">3MB <span class="percent">| 75%</span></span></div>
+					<input type="range" class="slider"></input>
+				</div>
+				<div class="allocation">
+					<div class="cf short"><span class="title">Wallet</span><span class="allocated">1MB <span class="percent">| 25%</span></span></div>
+					<input type="range" class="slider"></input>
+				</div>
+				<div class="allocation">
+					<div class="cf short"><span class="title">Antivirus</span><span class="allocated">0MB <span class="percent">| 0%</span></span></div>
+					<input type="range" class="slider"></input>
+				</div>
+				
 			</div>
 		</div></div>
 		
 		<div id="software" class="cell col-4"><div>
-			<div id="miner">
-				<span id="mine-button" class="button">Mine</span>
+			<div id="miner" ng-controller="MinerController as miner">
+				<span id="mine-button" class="button" ng-click="miner.mine()">Mine</span>
 				<span id="program">ClickMiner.exe</span> v1.0 DEMO
-				<div class="locked">
+				<div class="demo locked" ng-show="!miner.hasLicense()">
 					<p>Purchasing a full license will allow ClickMiner.exe to auto mine ClickCoins.</p>
-					<span class="button">Purchase License <strong>0.05cc</strong></span>
+					<span class="button" ng-click="miner.buyLicense()">Purchase License <strong><%= cc_icon %>0.05</strong></span>
+				</div>
+				<div class="auto" ng-show="miner.hasLicense()">
+					AUTOBOTS ASSEMBLE
 				</div>
 			</div>
 		</div></div>
@@ -29,22 +57,27 @@
 		<div id="currency" class="cell col-4"><div>
 			<div id="cc">
 				<span class="amount">5.0282</span>
-				<strong>CC</strong> Click Coins
+				<%= cc_icon %> Click Coins
 			</div>
 		</div></div>
 	</div>
 	<div id="row-2" class="grid">
+		<div id="stats" class="cell col-12" ng-controller="StatsController as stats"><div>
+			<%= cc_icon %> Click Coins <span class="amount">{{stats.coins.value}}</span>
+		</div></div>
+	</div>
+	<div id="row-3" class="grid">
 		<div id="company" class="cell col-6"><div>
 			<div class="locked">
 				<p>A company will allow you to hire researchers to build new hardware and discover new technologies.</p>
-				<span class="button">Purchase Company Ledger | 0.5cc</span>
+				<span class="button">Purchase Company Ledger <strong><%= cc_icon %>1.0</strong></span>
 			</div>
 		</div></div>
 		
 		<div id="datacenter" class="cell col-6"><div>
 			<div class="locked">
 				<p>A datacenter allows you to build a farm of many mass-produced servers to increase mining capacity.</p>
-				<span class="button">Purchase Empty Garage | 3cc</span>
+				<span class="button">Purchase Empty Garage <strong><%= cc_icon %>3.0</strong></span>
 			</div>
 		</div></div>
 	</div>
