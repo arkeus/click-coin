@@ -1,5 +1,7 @@
 var UpgradesDatabase = function() {
 	this.data = [
-		["Research Focus"],
+		{
+			name: "Research Focus",
+		}
 	];
 };
