@@ -12,6 +12,8 @@ var UpgradesDatabase = function() {
 		{ id: "rf3", name: "Research Focus III", rpA: 3, rpM: 0, ccA: 0, ccM: 0, req: ["rf2"] },
 		{ id: "rf4", name: "Research Focus IV", rpA: 4, rpM: 0, ccA: 0, ccM: 0, req: ["rf3"] },
 		{ id: "rf5", name: "Research Focus V", rpA: 5, rpM: 0, ccA: 0, ccM: 0, req: ["rf4"] },
-		{ id: "cpu1", name: "Mega Megahertz", req: [] },
+		{ id: "cpu1", name: "Improved Silicon I", req: [] },
+		{ id: "cpu1", name: "Improved Silicon II", req: [] },
+		{ id: "cpu1", name: "Improved Silicon III", req: [] },
 	];
 };
