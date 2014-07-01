@@ -16,8 +16,23 @@ $green-b1: #00ff5a;
 $green-b2: #00ffb4;
 $green-dark: #44a000;
 
+// Make an element unselectable
+@mixin unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.unselectable {
+	@include unselectable;
+}
+
 /* Buttons */
 @mixin button {
+	@include unselectable;
+	
 	display: inline-block;
 	padding: 1px 8px;
 	background: $background-color;
@@ -52,19 +67,6 @@ $green-dark: #44a000;
 .button-full {
 	@include button;
 	width: 100%;
-}
-
-// Make an element unselectable
-@mixin unselectable {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-.unselectable {
-	@include unselectable;
 }
 
 // Revert to border box sizing

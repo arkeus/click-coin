@@ -1,16 +1,17 @@
 <div id="click-coin" ng-cloak ng-app="click-coin">
 	<div id="row-1" class="grid">
-		<div id="hardware" class="cell col-4"><div>
+		<div id="hardware" class="cell col-4" ng-controller="HardwareController"><div>
 			<div id="cpu" class="component">
-				<div><strong>CPU</strong> Outel Celery I <span class="amount">+0.1 cc/s</span></div>
+				<span class="amount">+{{cpu().cpA}} cc/s</span>
+				<strong>CPU</strong> {{cpu().name}}
 			</div>
 			<div id="gpu" class="component">
-				<span class="amount">x1.0 cc/s</span>
-				<strong>GPU</strong> nAudia Integrated z100
+				<span class="amount">x{{gpu().cpM}} cc/s</span>
+				<strong>GPU</strong> {{gpu().name}}
 			</div>
 			<div class="cf" id="hardware-upgrades">
-				<div id="upgrade-cpu" class="button upgrade">Upgrade CPU</div>
-				<div id="upgrade-gpu" class="button upgrade">Upgrade GPU</div>
+				<div id="upgrade-cpu" class="button upgrade" ng-click="upgradeCpu()">Upgrade CPU</div>
+				<div id="upgrade-gpu" class="button upgrade" ng-click="upgradeGpu()">Upgrade GPU</div>
 			</div>
 			<div class="separator"></div>
 			<div id="ram" class="component">
