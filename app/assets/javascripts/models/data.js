@@ -6,5 +6,10 @@ app.factory("Data", [function() {
 		cpu: { id: "oc1" },
 		gpu: { id: "atu1" },
 		ram: { value: 4 },
+		upgrades: [],
+		
+		hasUpgrade: function(id) {
+			return this.upgrades.indexOf(id) !== -1;
+		},
 	};
 }]);
