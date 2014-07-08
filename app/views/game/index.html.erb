@@ -65,10 +65,13 @@
 		</div></div>
 	</div>
 	<div id="row-3" class="grid">
-		<div id="company" class="cell col-6"><div>
-			<div class="locked">
+		<div id="company" class="cell col-6" ng-controller="ResearchController"><div>
+			<div class="locked" ng-show="!isUnlocked()">
 				<p>A company will allow you to hire researchers to build new hardware and discover new technologies.</p>
-				<span class="button">Purchase Company Ledger <strong><%= cc_icon %>1.0</strong></span>
+				<span class="button" ng-click="buyCompany()">Purchase Company Ledger <strong><%= cc_icon %>1.0</strong></span>
+			</div>
+			<div ng-show="isUnlocked()">
+				<p>Something something.</p>
 			</div>
 		</div></div>
 		

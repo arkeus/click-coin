@@ -3,6 +3,8 @@ app.factory("Data", [function() {
 	return {
 		coins: { value: 1.34 },
 		license: { obtained: false },
+		company: { obtained: false },
+		datacenter: { obtained: false },
 		cpu: { id: "oc1" },
 		gpu: { id: "atu1" },
 		ram: { value: 4 },
