@@ -1,13 +1,13 @@
-app.controller("HardwareController", ["$scope", "Data", function($scope, Data) {
-	$scope.cpu = function() {return CPUDatabase.find("id", Data.cpu.id); };
-	$scope.gpu = function() { return GPUDatabase.find("id", Data.gpu.id); };
+app.controller("HardwareController", ["$scope", "Data", "CPU", "GPU", function($scope, Data, CPU, GPU) {
+	$scope.cpu = function() { return CPU.find("id", Data.cpu.id); };
+	$scope.gpu = function() { return GPU.find("id", Data.gpu.id); };
 	
 	$scope.upgradeCpu = function() {
-		upgrade(CPUDatabase, "cpu");
+		upgrade(CPU, "cpu");
 	};
 	
 	$scope.upgradeGpu = function() {
-		upgrade(GPUDatabase, "gpu");
+		upgrade(GPU, "gpu");
 	};
 	
 	var upgrade = function(database, type) {

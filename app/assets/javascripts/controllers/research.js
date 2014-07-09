@@ -1,4 +1,6 @@
-app.controller("ResearchController", ["$scope", "Data", function($scope, Data) {
+app.controller("ResearchController", ["$scope", "Data", "Upgrades", function($scope, Data, Upgrades) {
+	$scope.upgrades = Upgrades.data;
+	
 	$scope.isUnlocked = function() {
 		return Data.company.obtained;
 	};
@@ -8,5 +10,9 @@ app.controller("ResearchController", ["$scope", "Data", function($scope, Data) {
 			return;
 		}
 		Data.company.obtained = true;
+	};
+	
+	$scope.research = function(upgrade) {
+		Data.research(upgrade.id);
 	};
 }]);

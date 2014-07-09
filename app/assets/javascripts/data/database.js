@@ -26,4 +26,6 @@ var Database = function(data, keys) {
 			}
 		}
 	};
+	
+	this.data = data;
 };

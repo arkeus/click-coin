@@ -8,10 +8,14 @@ app.factory("Data", [function() {
 		cpu: { id: "oc1" },
 		gpu: { id: "atu1" },
 		ram: { value: 4 },
-		upgrades: [],
+		upgrades: {},
 		
 		hasUpgrade: function(id) {
-			return this.upgrades.indexOf(id) !== -1;
+			return id in this.upgrades;
+		},
+		
+		research: function(id) {
+			this.upgrades[id] = true;
 		},
 	};
 }]);
