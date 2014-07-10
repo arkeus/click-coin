@@ -14,5 +14,7 @@ app.controller("ResearchController", ["$scope", "Data", "Upgrades", function($sc
 	
 	$scope.research = function(upgrade) {
 		Data.research(upgrade.id);
+		// TODO: add ability to add messages to log
+		// TODO: research points
 	};
 }]);
