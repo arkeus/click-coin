@@ -9,6 +9,7 @@ app.factory("Data", [function() {
 		gpu: { id: "atu1" },
 		ram: { value: 4 },
 		upgrades: {},
+		rp: { value: 0 },
 		
 		hasUpgrade: function(id) {
 			return id in this.upgrades;
