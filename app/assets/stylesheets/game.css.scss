@@ -1,5 +1,6 @@
 @import "global/utils";
 @import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
 html {
 	background: $background-color;
@@ -117,6 +118,30 @@ html {
 					height: 40px;
 					overflow: hidden;
 					margin: 4px;
+					position: relative;
+					
+					.icon {
+						text-align: center;
+						font-family: 'Shadows Into Light', cursive;
+						font-size: 24px;
+						position: absolute;
+						top: -4px;
+						left: 0;
+						width: 40px;
+					}
+					
+					.rank {
+						text-align: center;
+						font-family: 'Shadows Into Light', cursive;
+						font-size: 16px;
+						position: absolute;
+						top: 12px;
+						left: 0;
+						width: 40px;
+						color: $green-b2;
+						font-weight: bold;
+						text-shadow: 0 0 2px #000;
+					}
 				}
 			}
 		}

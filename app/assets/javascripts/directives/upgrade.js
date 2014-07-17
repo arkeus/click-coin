@@ -1,7 +1,7 @@
 app.directive("upgrade", [function() {
 	return {
 		restrict: "E",
-		template: "{{upgrade.name}}",
+		template: "<span class='icon'>{{upgrade | researchIcon}}</span><span class='rank'>{{upgrade | researchRank}}</span>",
 		scope: {
 			upgrade: "=",
 		},
