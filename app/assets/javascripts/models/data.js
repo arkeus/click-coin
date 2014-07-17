@@ -10,6 +10,7 @@ app.factory("Data", [function() {
 		ram: { value: 4 },
 		upgrades: {},
 		rp: { value: 0 },
+		researchers: { interns: 0, assistants: 0, associates: 0, professors: 0 },
 		
 		hasUpgrade: function(id) {
 			return id in this.upgrades;
