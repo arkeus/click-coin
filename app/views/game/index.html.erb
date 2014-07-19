@@ -71,6 +71,9 @@
 				<span class="button" ng-click="buyCompany()">Purchase Company Ledger <strong><%= cc_icon %>1.0</strong></span>
 			</div>
 			<div ng-show="isUnlocked()">
+				<div id="researchers">
+					todo
+				</div>
 				<div id="research">
 					<upgrade ng-repeat="upgrade in upgrades | researchable" upgrade="upgrade" ng-click="research(upgrade)"></upgrade>
 				</div>
