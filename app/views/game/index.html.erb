@@ -72,7 +72,10 @@
 			</div>
 			<div ng-show="isUnlocked()">
 				<div id="researchers">
-					todo
+					<div>{{researchers.interns}} Interns</div>
+					<div>{{researchers.assistants}} Assistants</div>
+					<div>{{researchers.associates}} Associates</div>
+					<div>{{researchers.professors}} Professors</div>
 				</div>
 				<div id="research">
 					<upgrade ng-repeat="upgrade in upgrades | researchable" upgrade="upgrade" ng-click="research(upgrade)"></upgrade>

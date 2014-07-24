@@ -1,5 +1,6 @@
 app.controller("ResearchController", ["$scope", "Data", "Upgrades", function($scope, Data, Upgrades) {
 	$scope.upgrades = Upgrades.data;
+	$scope.researchers = Data.researchers;
 	
 	$scope.isUnlocked = function() {
 		return Data.company.obtained;
